@@ -1,0 +1,65 @@
+@import "../../template.scss";
+.forgot-password{
+	background-size: cover;
+	width: 100%;
+	min-height: calc(100% - 104px);
+	padding: 130px 24px 24px;
+	._login-wrapper {
+		max-width: 1024px;
+		width: 100%;
+	}
+
+	._login-intro {
+		color: white;
+		margin-right: 64px;
+		h2 {
+			font-size: 3em;
+			font-weight: 600;
+			margin-bottom: 36px;
+		}
+	}
+
+	._login-card {
+		background-color: white;
+		padding: 8px 24px 36px;
+		width: 400px;
+	}
+}
+.forgotCon {
+	padding: 1.5rem 1.75rem;
+	background-color: #fff;
+	border-radius: 4px;
+	text-align: center;
+	width: 90%;
+	max-width: 500px;
+	position: relative;
+	mat-icon.mat-icon{
+		top: 6px;
+		position: relative;
+		color: #cccccc;
+	}
+	button{
+		background-color: #57BF9C;
+		color: white;
+	}
+	span.roundUp {
+	    width: 100px;
+	    display: block;
+	    position: absolute;
+	    top: -45px;
+	    left: calc(50% - 50px);
+	    img{
+	    	max-width: 100%;
+	    	height: auto;
+	    }
+	    img.infoPic{
+			border-radius: 50%;
+			border: .5rem solid #fff;
+	    }
+	}
+	.fpVphead{
+		font-size: 1.8rem;
+		margin-top: 1rem;
+		font-weight: 600;
+	}
+}

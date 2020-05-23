@@ -1,0 +1,70 @@
+<app-admin-header></app-admin-header>
+
+<div class="main-content d-flex">
+    <app-admin-sidenav></app-admin-sidenav>
+
+    <div class="row mr-0 content-side" id="mainContent">
+        <div class="col-12 p-3 admin-content">
+            <div class="card results-section">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <span>All Patients</span>
+                </div>
+                <div class="card-body">
+                    <div class="row mx-0 align-items-center">
+                        <div class="col-lg-4 col-md-4">
+                            <mat-form-field>
+                                <mat-label>Patient Name</mat-label>
+                                <input matInput [(ngModel)]="filterDataBody.filter.patientName" placholder="Enter name">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <mat-form-field>
+                                <mat-label>Date</mat-label>
+                                <input matInput [(ngModel)]="filterDataBody.filter.date" [matDatepicker]="picker">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <button mat-raised-button class="action-button btn btn-info ml-1" (click)="getAllFeedbacks()">Filter</button>
+                            <button mat-raised-button class="action-button btn btn-info ml-1" (click)="clearFilter()">Clear</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive mt-3" >
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 150px;">Patient Name</th>
+                                    <th style="width: 150px;">Doctor Name</th>
+                                    <th style="width: 150px;">Date</th>
+                                    <th>Feedback</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of feedbacks; let i = index">
+                                    <td>{{data.patientName}}</td>
+                                    <td>{{data.doctorName}}</td>
+                                    <td>{{common.formatDate(data.createdAt)}}</td>
+                                    <td>{{data.suggestion}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot *ngIf="totalData == 0" style="text-align: center;">
+                                <tr>
+                                    <td colspan="4">No records found!</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <mat-paginator [length]="totalData" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[10, 25, 50]" (page)="setPage($event)">
+                    </mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loader-section" *ngIf="showLoader">
+    <div class="loading">
+        <span>Loading...</span>
+    </div>
+</div>

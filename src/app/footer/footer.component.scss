@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import "../../template.scss";
+.footer {
+    width: 100%;
+    padding: 10px;
+    background-color: #d6d6d6;
+    @include for-responsive($screen-mobile) {
+        flex-direction: column;
+    }
+    p {
+        font-size: 14px;
+        color: #545454;
+        margin: 0;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        @include for-responsive($screen-mobile) {
+            font-size: 12px;
+        }
+    }
+    span {
+        font-size: 14px;
+        color: #545454;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        @include for-responsive($screen-mobile) {
+            font-size: 12px;
+        }
+    }
+    a {
+        cursor: pointer;
+        img {
+            width: 80px;
+            margin-left: 10px;
+        }
+    }
+}

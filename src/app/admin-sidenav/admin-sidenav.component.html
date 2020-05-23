@@ -1,0 +1,15 @@
+<div class="sidenav-section" id="sidenavHide">
+    <div class="sidenavCon">
+        <div class="header-cancle"><b (click)="sidenavclose()">&times;</b></div>
+        <div class="user">
+            <img src="../../assets/img/side-nav.png" class="img-fluid img-thumbnail" />
+            <span>{{userDetails.fullName}}</span>
+            <span style="font-size: 12px;">{{userDetails.designation}}</span>
+        </div>
+        <a [routerLink]="['/doctors']" routerLinkActive="active-link"><i class="fas fa-address-card"></i> Doctors </a>
+        <a [routerLink]="['/patients']" routerLinkActive="active-link"><i class="fas fa-school"></i> Patients </a>
+        <a [routerLink]="['/feedbacks']" routerLinkActive="active-link"><i class="fas fa-book"></i> Feedbacks </a>
+        <a [routerLink]="['/change-password']" routerLinkActive="active-link"><i class="fas fa-book"></i> Change Password </a>
+        <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> log Out </a>
+    </div>
+</div>

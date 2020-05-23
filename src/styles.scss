@@ -1,0 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import "template.scss";
+html,
+body {
+    height: 100%;
+}
+
+button:focus {
+    outline: none;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.main-content {
+    width: 100%;
+    min-height: 100vh;
+    .content-side {
+        width: 100%;
+        transition: 0.3s;
+    }
+    .admin-content {
+        padding-top: 85px !important;
+    }
+}
+
+.btn-primary {
+    background-color: #2a8140!important;
+}
+
+.barChartButton {
+    background-color: #d34e25!important;
+    color: white;
+}
+
+#mainContent {
+    @include for-responsive($screen-tab) {
+        width: 100% !important;
+    }
+}
+
+.admin-content {
+    @include for-responsive($screen-mobile) {
+        padding: 10px 5px!important;
+    }
+}
+
+.content-side {
+    @include for-responsive($screen-tab) {
+        margin-left: 0px!important;
+    }
+}
+
+:ng-deep {
+    .mat-option-text {
+        text-transform: capitalize;
+    }
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #D1502C !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #D1502C !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #D1502C !important;
+}
+
+ ::ng-deep .timepicker__header {
+    background-color: #000000 !important;
+}
+
+::ng-deep .mat-checkbox-layout {
+    margin-bottom: 0;
+}
+
+::ng-deep .mat-checkbox-label {
+    font-family: 'Montserrat';
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: #D1502C;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #D1502C;
+}
+
+::ng-deep .mat-radio-inner-circle {
+    background-color: #D1502C;
+}
+
+::ng-deep .mat-radio-outer-circle {
+    border-color: #D1502C
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #D1502C !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #D1502C;
+}
+
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #D1502C;
+}
+
+::ng-deep .timepicker__header {
+    background-color: #000000 !important;
+}
+
+::ng-deep .mat-ink-bar {
+    background-color: #D1502C!important;
+}

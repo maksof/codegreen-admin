@@ -1,0 +1,95 @@
+<app-admin-header></app-admin-header>
+
+<div class="main-content d-flex">
+    <app-admin-sidenav></app-admin-sidenav>
+
+    <div class="row mr-0 content-side" id="mainContent">
+        <div class="col-12 p-3 admin-content">
+            <div class="card results-section">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <span>All Doctors</span>
+                </div>
+                <div class="card-body">
+                    <div class="row mx-0 align-items-center">
+                        <div class="col-lg-3 col-md-3">
+                            <mat-form-field>
+                                <mat-label>Doctor Name</mat-label>
+                                <input matInput [(ngModel)]="filterDataBody.filter.name" placholder="Enter name">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-form-field>
+                                <mat-label>Account Status</mat-label>
+                                <mat-select [(ngModel)]="filterDataBody.filter.status">
+                                    <mat-option value="APPROVED">APPROVED</mat-option>
+                                    <mat-option value="REJECTED">REJECTED</mat-option>
+                                    <mat-option value="PENDING">PENDING</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <input matInput [(ngModel)]="filterDataBody.filter.email" placholder="Enter email">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-form-field>
+                                <mat-label>PMDC Number</mat-label>
+                                <input matInput [(ngModel)]="filterDataBody.filter.pmdcNumber" placholder="Enter PMDC No">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <button mat-raised-button class="action-button btn btn-info ml-1" (click)="getAllDoctors()">Filter</button>
+                            <button mat-raised-button class="action-button btn btn-info ml-1" (click)="clearFilter()">Clear</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive mt-3" >
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Doctor Details</th>
+                                    <th>Qualification Info</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of doctors; let i = index">
+                                    <td>
+                                        <b>{{data.fullName}}</b><br>
+                                        Designation: {{data.designation}}<br>
+                                        Email: {{data.email}} <br>
+                                        Phone Number: {{data.phoneNumber}}
+                                    </td>
+                                    <td>
+                                        <b>Hospital: </b> {{data.hospital}} <br>
+                                        <b>PMDC Number: {{data.pmdcNumber}}</b>  <br>
+                                        <b>Qualification: </b> {{data.qualification.join(',')}} <br>
+                                    </td>
+                                    <td class="text-right">
+                                        <button *ngIf="data.isApproved == false && data.isVerified == true" mat-raised-button class="action-button btn btn-info" (click)="approveDoctor(data._id, i)">Approve</button>
+                                        <button *ngIf="data.isApproved == false && data.isVerified == true" mat-raised-button color="warn" class="action-button px-0  ml-1"  (click)="rejectDoctor(data._id, i)">Reject</button>
+                                        <button *ngIf="data.isVerified == false"mat-raised-button color="warn" class="action-button px-0  ml-1"  (click)="resendEmail(data._id)">Resend Verification Email</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot *ngIf="totalData == 0" style="text-align: center;">
+                                <tr>
+                                    <td colspan="3">No records found!</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <mat-paginator [length]="totalData" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[10, 25, 50]" (page)="setPage($event)">
+                    </mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loader-section" *ngIf="showLoader">
+    <div class="loading">
+        <span>Loading...</span>
+    </div>
+</div>

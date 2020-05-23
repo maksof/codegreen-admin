@@ -1,0 +1,40 @@
+<div class="section d-flex align-items-center justify-content-center">
+    <div class="card">
+        <div class="body">
+            <div class="row mx-0 log-content">
+                <div class="col-lg-6 col-md-6 col-12 aside-left d-flex  justify-content-center">
+
+                    <h1>Code Green!</h1>
+                    <span></span>
+
+                    <p>
+                        Admin portal
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 aside-right d-flex align-items-center  justify-content-center">
+                    <h1>Signin</h1>
+                    <span></span>
+                    <div class="form-fields">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Enter Email" [(ngModel)]="userData.email" (keyup.enter)="login()" id="disable">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Enter Password" type="password" [(ngModel)]="userData.password" (keyup.enter)="login()" id="disablePassword">
+                        </mat-form-field>
+                        <div class="_action-button w-100 text-center">
+                            <button mat-raised-button (click)="login()">LOGIN</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loader-section" *ngIf="showLoader">
+    <div class="loading">
+        <span>Loading...</span>
+    </div>
+</div>
