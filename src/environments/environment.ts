@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  userApi : "http://localhost:3000/api/",
+  userApi : "https://codegreen.pk/api/",
   cloudinaryBase64Ulr : 'https://cdn.codegreen.pk/api/uploadBase64'
 };
 
