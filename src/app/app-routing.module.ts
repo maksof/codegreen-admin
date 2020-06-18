@@ -7,6 +7,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientsComponent } from './patients/patients.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { SendEmailComponent } from './send-email/send-email.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"patients",component:PatientsComponent, canActivate: [AuthGuardService]},
   {path:"feedbacks",component:FeedbackComponent, canActivate: [AuthGuardService]},
   {path:"change-password",component:ChangePasswordComponent, canActivate: [AuthGuardService]},
+  {path:"send-email",component:SendEmailComponent, canActivate: [AuthGuardService]},
   {path:"loading/:token",component:VerifyLoginComponent}
 ];
 

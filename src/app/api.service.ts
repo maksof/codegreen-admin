@@ -48,4 +48,8 @@ export class ApiService {
     return this.appService.post(`admin/rejectDoctor`,obj);
   }
 
+  sendEmail(obj) {
+    return this.appService.post(`admin/sendEmail`,obj);
+  }
+
 }

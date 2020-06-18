@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import"../../styles.scss";
+@import "../../template.scss";
+.admin-content {
+    min-height: 100vh;
+    background-color: #F2F3F7;
+    .card-header {
+        font-family: 'Montserrat';
+        color: #595959;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .card-body {
+        padding: 20px;
+        min-height: 300px;
+        mat-form-field {
+            width: 100%;
+        }
+        .table{
+            td{
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.social-icon{
+    i{
+        font-size:19px;
+        margin: 0px 18px;
+    }
+}
+.store-icon{
+    img{
+        cursor: pointer;
+    }
+}
+._action-button {
+    button {
+        width: 120px;
+        background-color: #2392C9;
+        @include for-responsive($screen-tab) {
+            width: 100%;
+            margin-top: 11px;
+        }
+    }
+}

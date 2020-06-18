@@ -17,13 +17,19 @@
                                 <input matInput [(ngModel)]="filterDataBody.filter.name" placholder="Enter name">
                             </mat-form-field>
                         </div>
-                        <div class="col-lg-2 col-md-2">
+                        <div class="col-lg-1 col-md-1">
                             <mat-form-field>
                                 <mat-label>Gender</mat-label>
                                 <mat-select [(ngModel)]="filterDataBody.filter.gender">
                                     <mat-option value="Male">Male</mat-option>
                                     <mat-option value="Female">Female</mat-option>
                                 </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-1 col-md-1">
+                            <mat-form-field>
+                                <mat-label>Age</mat-label>
+                                <input matInput [(ngModel)]="filterDataBody.filter.age" OnlyNumber="true" autocomplete="off">
                             </mat-form-field>
                         </div>
                         <div class="col-lg-2 col-md-2">

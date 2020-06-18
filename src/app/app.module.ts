@@ -35,6 +35,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientsComponent } from './patients/patients.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { SendEmailComponent } from './send-email/send-email.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     DoctorsComponent,
     PatientsComponent,
     FeedbackComponent,
+    SendEmailComponent,
   ],
   imports: [
     BrowserModule,

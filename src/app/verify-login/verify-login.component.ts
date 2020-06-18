@@ -17,17 +17,21 @@ export class VerifyLoginComponent implements OnInit {
 
   ngOnInit() {
     this.showLoader = true;
-    console.log('INSIDE');
   	this.api.verifyLogin().subscribe(res=>{
   		if(res.status == "OK"){
         localStorage.setItem("user",JSON.stringify(res.data));
         this.verifySuccess = true;
         this.router.navigateByUrl(`/doctors`);
   		} else {
-  			this.notificationService.error("Error","Your session is expired, Please login again!")
-  			this.router.navigateByUrl("")
+  			this.notificationService.error("Error","Your session is expired, Please login again!");
+  			localStorage.clear();
+        this.router.navigateByUrl("");
   		}
-  	})
+  	},(err)=>{
+      this.notificationService.error("Error","Internal server error! Please try again later");
+      localStorage.clear();
+      this.router.navigateByUrl("");
+    })
   }
 
 }
