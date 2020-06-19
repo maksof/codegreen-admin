@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +11,12 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
+    this.api.dashboardStats().subscribe(res=>{
+      console.log(res)
+    })
   }
 
   panelOpenState = false;

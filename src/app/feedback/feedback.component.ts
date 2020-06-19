@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from "src/app/api.service";
 import { CommonService } from "src/app/common.service";
 import { NotificationsService } from 'angular2-notifications';
 import { Router } from "@angular/router";
+
+
+export interface Doctors {
+	fullName: string;
+  }
 
 @Component({
   selector: 'app-feedback',
@@ -25,11 +30,48 @@ export class FeedbackComponent implements OnInit {
 	feedbacks: any = [];
 	totalData: any;
 	showLoader = false;
+	searchDoctors;
+
+	doctors:any = [];
+	filteredDoctors:any = [];
 
 	ngOnInit() {
 		this.getAllFeedbacks();
+		this.getAllDoctors();
 	}
 
+	getAllDoctors(){
+		this.api.allDoctors().subscribe(res=>{
+			this.doctors = res['data'];
+			this.filterDoctor({target : {value : ""}});
+		})
+	}
+
+	filterDoctor(event){
+		if(event.target.value == ""){	
+			this.clearFilter();
+		}
+		var filteredDoctors = this.doctors.map(function (doctor) {
+			if(doctor.fullName.toLowerCase().indexOf(event.target.value) != -1){
+				return doctor;
+			}
+		});
+		
+		var newDoctors = [];
+		
+		filteredDoctors.forEach(row=>{
+			if(row != undefined){
+				newDoctors.push(row);
+			}
+		});
+
+		this.filteredDoctors = newDoctors;
+	}
+
+	selectedDoctor(event){
+		this.filterDataBody.filter.doctorId = event._id;
+	}
+	
 	getAllFeedbacks() {
 		this.showLoader = true;
 		this.api.getAllFeedbacks(this.filterDataBody).subscribe(res => {
@@ -54,8 +96,13 @@ export class FeedbackComponent implements OnInit {
   }
 
   clearFilter() {
-    this.filterDataBody.filter = {};
+	this.filterDataBody.filter = {};
+	this.searchDoctors = "";
     this.getAllFeedbacks();
+  }
+
+  displayDoctors(doctor: Doctors): string {
+    return doctor && doctor.fullName ? doctor.fullName : '';
   }
 
 }
