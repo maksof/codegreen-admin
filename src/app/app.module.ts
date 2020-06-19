@@ -72,6 +72,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FacebookModule.forRoot(),
     NgxMaterialTimepickerModule,
     ScrollToModule.forRoot()
+
   ],
   providers: [AppService, ApiService, CommonService],
   bootstrap: [AppComponent]

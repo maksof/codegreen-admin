@@ -16,25 +16,56 @@
         mat-form-field {
             width: 100%;
         }
-        .table{
-            td{
+        .table {
+            td {
                 vertical-align: middle;
+            }
+        }
+    }
+    .performance-chart {
+        .details {
+            width: 20%;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+            mat-card-header {
+                mat-card-title {
+                    font-size: 15px;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                    font-family: 'Montserrat';
+                }
+                mat-card-subtitle {
+                    margin: 0;
+                    font-family: 'Montserrat';
+                }
+            }
+        }
+    }
+    .daily-progress {
+        mat-expansion-panel-header {
+            mat-panel-title {
+                font-family: 'Montserrat';
+                font-size: 15px;
+                font-weight: 600;
             }
         }
     }
 }
 
-.social-icon{
-    i{
-        font-size:19px;
+.social-icon {
+    i {
+        font-size: 19px;
         margin: 0px 18px;
     }
 }
-.store-icon{
-    img{
+
+.store-icon {
+    img {
         cursor: pointer;
     }
 }
+
 ._action-button {
     button {
         width: 120px;
@@ -44,4 +75,8 @@
             margin-top: 11px;
         }
     }
+}
+
+::ng-deep .mat-card-header-text {
+    margin: 0 !important;
 }
