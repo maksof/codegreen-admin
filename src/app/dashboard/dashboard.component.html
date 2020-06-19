@@ -39,8 +39,8 @@
                     </mat-card>
                 </div>
             </div> -->
-            <div fLayout="row" fxLayoutAling="space-around-center">
-                <div fxFlex="20">
+            <div class="performance-chart d-flex align-items-center justify-content-between">
+                <div class="details">
                     <mat-card class="example-card">
                         <mat-card-header>
                             <mat-card-title>Today's Patient Signup</mat-card-title>
@@ -48,7 +48,7 @@
                         </mat-card-header>
                     </mat-card>
                 </div>
-                <div fxFlex="20">
+                <div class="details">
                     <mat-card class="example-card">
                         <mat-card-header>
                             <mat-card-title>Today's Patient Signup</mat-card-title>
@@ -56,7 +56,7 @@
                         </mat-card-header>
                     </mat-card>
                 </div>
-                <div fxFlex="20">
+                <div class="details">
                     <mat-card class="example-card">
                         <mat-card-header>
                             <mat-card-title>Today's Patient Signup</mat-card-title>
@@ -64,7 +64,7 @@
                         </mat-card-header>
                     </mat-card>
                 </div>
-                <div fxFlex="20">
+                <div class="details">
                     <mat-card class="example-card">
                         <mat-card-header>
                             <mat-card-title>Today's Patient Signup</mat-card-title>
@@ -72,7 +72,7 @@
                         </mat-card-header>
                     </mat-card>
                 </div>
-                <div fxFlex="20">
+                <div class="details">
                     <mat-card class="example-card">
                         <mat-card-header>
                             <mat-card-title>Today's Patient Signup</mat-card-title>
@@ -82,33 +82,29 @@
                 </div>
             </div>
             <div class="row mx-0 mt-3 align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div>
-                        <div>
-                            <div class="chart">
-                                <canvas baseChart [data]="pieChartData1" [labels]="pieChartLabels1"
-                                    [chartType]="pieChartType1" [options]="pieChartOptions1" [plugins]="pieChartPlugins1"
-                                    [colors]="pieChartColors1" [legend]="pieChartLegend1">
+                <div class="col-lg-6 col-md-6 col-12 pl-0">
+
+                    <mat-card>
+                        <div class="chart">
+                            <canvas baseChart [data]="pieChartData1" [labels]="pieChartLabels1" [chartType]="pieChartType1" [options]="pieChartOptions1" [plugins]="pieChartPlugins1" [colors]="pieChartColors1" [legend]="pieChartLegend1">
                                 </canvas>
-                            </div>
                         </div>
-                    </div>
+                    </mat-card>
+
                 </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div>
-                        <div>
-                            <div class="chart">
-                                <canvas baseChart [data]="pieChartData2" [labels]="pieChartLabels2"
-                                    [chartType]="pieChartType2" [options]="pieChartOptions2" [plugins]="pieChartPlugins2"
-                                    [colors]="pieChartColors2" [legend]="pieChartLegend2">
+                <div class="col-lg-6 col-md-6 col-12 pr-0">
+
+                    <mat-card>
+                        <div class="chart">
+                            <canvas baseChart [data]="pieChartData2" [labels]="pieChartLabels2" [chartType]="pieChartType2" [options]="pieChartOptions2" [plugins]="pieChartPlugins2" [colors]="pieChartColors2" [legend]="pieChartLegend2">
                                 </canvas>
-                            </div>
                         </div>
-                    </div>
+                    </mat-card>
+
                 </div>
             </div>
-            <div class="row mx-0 mt-3 align-items-center">
-                <div class="col-lg-12">
+            <div class="row mx-0 mt-3 align-items-center daily-progress">
+                <div class="col-lg-12 px-0">
                     <mat-accordion>
                         <mat-expansion-panel>
                             <mat-expansion-panel-header>
@@ -117,15 +113,23 @@
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
 
-                            <mat-form-field>
-                                <mat-label>First name</mat-label>
-                                <input matInput>
-                            </mat-form-field>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Name</th>
+                                        <th>Phone Number</th>
 
-                            <mat-form-field>
-                                <mat-label>Age</mat-label>
-                                <input matInput type="number" min="1">
-                            </mat-form-field>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let detail of [1,2,3.5,6]; let i = index">
+                                        <td>{{i+1}}</td>
+                                        <td>Daniyal</td>
+                                        <td>0345-00000000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </mat-expansion-panel>
                         <mat-expansion-panel>
                             <mat-expansion-panel-header>
@@ -133,7 +137,24 @@
                                     Active conversations
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
-                            <p>I'm visible because I am open</p>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Name</th>
+                                        <th>Phone Number</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let detail of [1,2,3.5,6]; let i = index">
+                                        <td>{{i+1}}</td>
+                                        <td>Daniyal</td>
+                                        <td>0345-00000000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </mat-expansion-panel>
                         <mat-expansion-panel>
                             <mat-expansion-panel-header>
@@ -141,7 +162,24 @@
                                     Today's Converstations
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
-                            <p>I'm visible because I am open</p>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Name</th>
+                                        <th>Phone Number</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let detail of [1,2,3.5,6]; let i = index">
+                                        <td>{{i+1}}</td>
+                                        <td>Daniyal</td>
+                                        <td>0345-00000000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </mat-expansion-panel>
                         <mat-expansion-panel>
                             <mat-expansion-panel-header>
@@ -149,7 +187,24 @@
                                     Conversations with less interaction to doctor
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
-                            <p>I'm visible because I am open</p>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Name</th>
+                                        <th>Phone Number</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let detail of [1,2,3.5,6]; let i = index">
+                                        <td>{{i+1}}</td>
+                                        <td>Daniyal</td>
+                                        <td>0345-00000000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </mat-expansion-panel>
                     </mat-accordion>
                 </div>
