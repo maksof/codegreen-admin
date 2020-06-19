@@ -52,4 +52,12 @@ export class ApiService {
     return this.appService.post(`admin/sendEmail`,obj);
   }
 
+  dashboardStats(){
+    return this.appService.get(`admin/dashboardStatus`);
+  }
+
+  allDoctors(){
+    return this.appService.get(`admin/getAllDoctorsForAdmin`);
+  }
+
 }

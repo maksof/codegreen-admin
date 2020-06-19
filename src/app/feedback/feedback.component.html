@@ -18,9 +18,14 @@
                             </mat-form-field>
                         </div>
                         <div class="col-lg-3 col-md-3">
-                            <mat-form-field>
-                                <mat-label>Doctor</mat-label>
-                                <input matInput [(ngModel)]="filterDataBody.filter.doctorName" placholder="Enter name">
+                            <mat-form-field class="example-full-width w-100">
+                                <input type="text" placeholder="Search Groups" (keyup)='filterDoctor($event)' matInput
+                                    [(ngModel)]="searchDoctors" [matAutocomplete]="doctorOptions">
+                                <mat-autocomplete #doctorOptions="matAutocomplete" [displayWith]="displayDoctors" (optionSelected)='selectedDoctor($event.option.value)'>
+                                    <mat-option *ngFor="let doctor of filteredDoctors; let i = index" [value]="doctor">
+                                        {{doctor.fullName}}
+                                    </mat-option>
+                                </mat-autocomplete>
                             </mat-form-field>
                         </div>
                         <div class="col-lg-3 col-md-3">
