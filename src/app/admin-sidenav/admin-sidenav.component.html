@@ -6,6 +6,7 @@
             <span>{{userDetails.fullName}}</span>
             <span style="font-size: 12px;">{{userDetails.designation}}</span>
         </div>
+        <a [routerLink]="['/dashboard']" routerLinkActive="active-link"><i class="fas fa-address-card"></i> Dashboard</a>
         <a [routerLink]="['/doctors']" routerLinkActive="active-link"><i class="fas fa-address-card"></i> Doctors </a>
         <a [routerLink]="['/patients']" routerLinkActive="active-link"><i class="fas fa-school"></i> Patients </a>
         <a [routerLink]="['/feedbacks']" routerLinkActive="active-link"><i class="fas fa-book"></i> Feedbacks </a>

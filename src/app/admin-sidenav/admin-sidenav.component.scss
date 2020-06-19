@@ -2,13 +2,14 @@
 @import "../../template.scss";
 @import "../../styles.scss";
 .sidenav-section {
-    background-color: #2E3440;
+    background-color: #f0f4f7;
     min-height: 100%;
     width: 230px;
     transition: 0.3s;
     position: fixed;
     z-index: 950;
     overflow: hidden;
+    box-shadow: 5px -1px 9px #0000001f;
     .sidenavCon {
         width: 100%;
         min-width: 230px;
@@ -16,7 +17,7 @@
         background: none;
         min-height: 100vh;
         max-height: 100vh;
-        overflow-y: scroll;
+        overflow-y: auto;
         padding-bottom: 15px;
         .header-cancle {
             color: #969dab;
@@ -49,15 +50,15 @@
             width: 100%;
             padding: 10px 0px;
             padding-left: 35px;
-            color: #969dab;
+            color: #2E3440;
             font-family: 'Montserrat';
             border-left: 3px solid transparent;
             text-decoration: none;
             cursor: pointer;
             text-transform: capitalize;
+            font-weight: 600;
             &:hover {
                 background-color: #252C34;
-                border-left: 3px solid #ffffff;
                 color: #ffffff;
                 text-decoration: none;
                 & i {
@@ -71,7 +72,6 @@
         }
         .active-link {
             background-color: #252C34;
-            border-left: 3px solid #ffffff;
             color: #ffffff;
             text-decoration: none;
             & i {
@@ -94,7 +94,7 @@
                 font-weight: 600;
                 display: block;
                 font-size: 16px;
-                color: #969dab;
+                color: #2E3440;
                 margin: 13px 0px;
                 text-transform: capitalize;
             }
