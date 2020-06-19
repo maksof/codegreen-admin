@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit {
           const label = ctx.chart.data.labels[ctx.dataIndex];
           return label;
         },
+        color : ['rgb(39, 47, 63)', 'rgb(255,255,255)', 'rgb(255,255,255)'],
       },
     }
   };
@@ -40,9 +41,10 @@ export class DashboardComponent implements OnInit {
   public pieChartPlugins1 = [pluginDataLabels];
   public pieChartColors1 = [
     {
-      backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
+      backgroundColor: ['rgb(240, 244, 247)', 'rgb(40, 101, 68)', 'rgb(46, 52, 64)'],
     },
   ];
+  
 
   // Pie Chart Data 2
 
@@ -50,6 +52,7 @@ export class DashboardComponent implements OnInit {
     responsive: true,
     legend: {
       position: 'top',
+
     },
     plugins: {
       datalabels: {
@@ -57,6 +60,7 @@ export class DashboardComponent implements OnInit {
           const label = ctx.chart.data.labels[ctx.dataIndex];
           return label;
         },
+        color : ['rgb(39, 47, 63)', 'rgb(255,255,255)', 'rgb(255,255,255)'],
       },
     }
   };
@@ -67,7 +71,7 @@ export class DashboardComponent implements OnInit {
   public pieChartPlugins2 = [pluginDataLabels];
   public pieChartColors2 = [
     {
-      backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
+      backgroundColor: ['rgb(240, 244, 247)', 'rgb(40, 101, 68)', 'rgb(46, 52, 64)'],
     },
   ];
 
