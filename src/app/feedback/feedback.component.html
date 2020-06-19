@@ -11,13 +11,19 @@
                 </div>
                 <div class="card-body">
                     <div class="row mx-0 align-items-center">
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-3 col-md-3">
                             <mat-form-field>
                                 <mat-label>Patient Name</mat-label>
                                 <input matInput [(ngModel)]="filterDataBody.filter.patientName" placholder="Enter name">
                             </mat-form-field>
                         </div>
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-3 col-md-3">
+                            <mat-form-field>
+                                <mat-label>Doctor</mat-label>
+                                <input matInput [(ngModel)]="filterDataBody.filter.doctorName" placholder="Enter name">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
                             <mat-form-field>
                                 <mat-label>Date</mat-label>
                                 <input matInput [(ngModel)]="filterDataBody.filter.date" [matDatepicker]="picker">
@@ -25,7 +31,7 @@
                                 <mat-datepicker #picker></mat-datepicker>
                             </mat-form-field>
                         </div>
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-3 col-md-3">
                             <button mat-raised-button class="action-button btn btn-info ml-1" (click)="getAllFeedbacks()">Filter</button>
                             <button mat-raised-button class="action-button btn btn-info ml-1" (click)="clearFilter()">Clear</button>
                         </div>
