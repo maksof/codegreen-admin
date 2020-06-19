@@ -36,6 +36,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientsComponent } from './patients/patients.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { SendEmailComponent } from './send-email/send-email.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SendEmailComponent } from './send-email/send-email.component';
     PatientsComponent,
     FeedbackComponent,
     SendEmailComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

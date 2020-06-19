@@ -8,6 +8,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientsComponent } from './patients/patients.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { SendEmailComponent } from './send-email/send-email.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:"feedbacks",component:FeedbackComponent, canActivate: [AuthGuardService]},
   {path:"change-password",component:ChangePasswordComponent, canActivate: [AuthGuardService]},
   {path:"send-email",component:SendEmailComponent, canActivate: [AuthGuardService]},
+  {path:"dashboard",component:DashboardComponent, canActivate: [AuthGuardService]},
   {path:"loading/:token",component:VerifyLoginComponent}
 ];
 
